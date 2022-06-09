@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { TextField, Box, Container, Button, Link } from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
+import AddTaskIcon from '@mui/icons-material/AddTask';
+import {useNavigate} from 'react-router-dom'
 
 function App() {
+
+  const navigate = useNavigate()
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <center>
+        The Main CRUD
+      </center>
+      <br />
+      <br />
+      <br />
+      <Box>
+      <Button
+            color="primary"
+            endIcon={<AddIcon />}
+            startIcon={<AddTaskIcon />}
+            onClick={() => navigate('/create')}
+          >
+            Create</Button>
+        <Button
+          onClick={() => navigate('/read')}
+          color="success"
+        >Read</Button>
+      </Box>
+    </Container>
   );
 }
 
